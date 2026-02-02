@@ -3,10 +3,10 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>User Registration - VaxSafe System</title>
+<title>System Login | Vaccine Management Portal</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -19,185 +19,110 @@
                         "background-dark": "#102216",
                     },
                     fontFamily: {
-                        "display": ["Public Sans"]
+                        "display": ["Public Sans", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
     </script>
 <style>
         body {
-            font-family: 'Public Sans', sans-serif;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cfe7d7;
-            border-radius: 10px;
+            font-family: "Public Sans", sans-serif;
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
 <!-- Top Navigation Bar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3eb] dark:border-b-white/10 px-10 py-3 bg-white dark:bg-background-dark z-10">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7f3eb] dark:border-[#1e3a24] bg-white dark:bg-[#152a1c] px-6 lg:px-40 py-3">
 <div class="flex items-center gap-4 text-[#0d1b12] dark:text-white">
-<div class="size-6 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_535)">
-<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
-</g>
-<defs>
-<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
-</defs>
-</svg>
+<div class="flex items-center justify-center p-2 rounded-lg bg-primary/10">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="vaccines">vaccines</span>
 </div>
-<h2 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">VaxSafe System</h2>
+<h2 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Vaccine Portal</h2>
 </div>
 <div class="flex flex-1 justify-end gap-8">
-<div class="hidden md:flex items-center gap-9">
+<div class="flex items-center gap-9">
 <a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Clinics</a>
-<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Safety Information</a>
-</div>
-<div class="flex gap-2">
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-[#0d1b12] text-sm font-bold leading-normal">
-<span>Register</span>
-</button>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#e7f3eb] dark:bg-white/10 text-[#0d1b12] dark:text-white text-sm font-bold leading-normal">
-<span>Login</span>
-</button>
+<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Centers</a>
+<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">FAQs</a>
 </div>
 </div>
 </header>
 <!-- Main Content Area -->
-<main class="flex-1 flex overflow-hidden">
-<!-- Left Side: Illustration & Branding -->
-<div class="hidden lg:flex lg:w-1/2 flex-col justify-center items-center bg-white dark:bg-background-dark/50 border-r border-[#e7f3eb] dark:border-white/5 relative">
-<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#13ec5b_1px,transparent_1px)] [background-size:20px_20px]"></div>
-<div class="max-w-md text-center p-8 z-10">
-<div class="w-full aspect-square bg-[#f0f9f3] dark:bg-[#1a2e21] rounded-full flex items-center justify-center mb-8 relative">
-<div class="w-64 h-64 bg-primary/20 rounded-full animate-pulse absolute"></div>
-<img alt="Healthcare professional with vaccine" class="relative z-10 w-4/5" data-alt="Illustration of a healthcare professional holding a vaccine vial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxqN0g4O8_TLHeTCkfNxQWVNbCm4LN82qS73S2fs0XShRIhqG79g5wMoDTvMXj3SeQHEURZlPSg6_mo_2yCeH5ob-2WyzEAyRVxUjrtQObvEnQ1_dz-uYyg0k4QCSCdcTH0cIfTp6nAYGEpUKIYdKoyYWhF5M8ZTbLg02OuLXPcEzgfwZwzmx2nJ3-HWalVjMscobPd_ktnv8qeaXfdKDh_Fi7-KWWWwT7HwTU6gzQn0KmRq6NI7zer4a_oI9eYyGGK3MJ8YJbuAH9"/>
-</div>
-<h2 class="text-3xl font-bold text-[#0d1b12] dark:text-white mb-4">Securing Health, One Dose at a Time</h2>
-<p class="text-gray-600 dark:text-gray-400">Join our comprehensive vaccination management system designed for your safety and convenience.</p>
-<div class="mt-10 flex gap-4 justify-center">
-<div class="flex items-center gap-2 px-3 py-1 bg-white dark:bg-background-dark border border-gray-200 dark:border-white/10 rounded-full shadow-sm">
-<span class="material-symbols-outlined text-primary text-sm">verified</span>
-<span class="text-xs font-semibold dark:text-gray-300">Verified Clinics</span>
-</div>
-<div class="flex items-center gap-2 px-3 py-1 bg-white dark:bg-background-dark border border-gray-200 dark:border-white/10 rounded-full shadow-sm">
-<span class="material-symbols-outlined text-primary text-sm">security</span>
-<span class="text-xs font-semibold dark:text-gray-300">Secure Records</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Side: Registration Form -->
-<div class="flex-1 w-full lg:w-1/2 flex flex-col items-center justify-start overflow-y-auto custom-scrollbar bg-background-light dark:bg-background-dark py-12 px-6">
-<div class="w-full max-w-[540px]">
-<!-- Header Text -->
-<div class="mb-8">
-<h1 class="text-[#0d1b12] dark:text-white tracking-tight text-[32px] font-bold leading-tight pb-2">Create Your Account</h1>
-<p class="text-[#0d1b12]/70 dark:text-gray-400 text-base font-normal">
-                        Join thousands of citizens ensuring their health and safety through our vaccination program.
+<main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+<div class="w-full max-w-[480px]">
+<!-- Login Card Container -->
+<div class="bg-white dark:bg-[#152a1c] rounded-xl shadow-xl border border-[#e7f3eb] dark:border-[#1e3a24] overflow-hidden">
+<!-- Headline Section -->
+<div class="pt-10 pb-2 px-8">
+<h1 class="text-[#0d1b12] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center">Welcome back</h1>
+<p class="text-[#4b5563] dark:text-gray-400 text-base font-normal leading-normal pt-2 text-center">
+                        Please enter your credentials to access your dashboard.
                     </p>
 </div>
-<!-- Registration Form -->
-<form class="space-y-5">
-<!-- Section 1: Credentials -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Form Section -->
+<form class="p-8 space-y-4">
+<!-- Username/Email Field -->
 <div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Username</label>
-<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="johndoe88" type="text"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Password</label>
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#0d1b12] dark:text-gray-200 text-base font-medium leading-normal pb-2">Username or Email</p>
 <div class="relative">
-<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 pr-10 text-base transition-all" placeholder="••••••••" type="password"/>
-<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer select-none">visibility</span>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" data-icon="mail">mail</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b12] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfe7d7] dark:border-[#1e3a24] bg-[#f8fcf9] dark:bg-[#0c1a10] focus:border-primary h-14 placeholder:text-gray-400 pl-12 pr-4 text-base font-normal leading-normal" placeholder="e.g. john.doe@email.com" type="text" value=""/>
 </div>
+</label>
 </div>
-</div>
-<!-- Section 2: Personal Info -->
+<!-- Password Field -->
 <div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Full Name (as per ID)</label>
-<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="Johnathan Doe" type="text"/>
+<div class="flex justify-between items-center">
+<p class="text-[#0d1b12] dark:text-gray-200 text-base font-medium leading-normal">Password</p>
+<a class="text-sm font-medium text-primary hover:underline" href="#">Forgot Password?</a>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Date of Birth</label>
-<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" type="date"/>
+<label class="flex flex-col min-w-40 flex-1">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" data-icon="lock">lock</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b12] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#cfe7d7] dark:border-[#1e3a24] bg-[#f8fcf9] dark:bg-[#0c1a10] focus:border-primary h-14 placeholder:text-gray-400 pl-12 pr-4 text-base font-normal leading-normal" placeholder="Enter your password" type="password" value=""/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
 </div>
-<div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Gender</label>
-<select class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all appearance-none">
-<option disabled="" selected="" value="">Select Gender</option>
-<option value="male">Male</option>
-<option value="female">Female</option>
-<option value="other">Other</option>
-</select>
+</label>
 </div>
+<!-- Remember Me Toggle -->
+<div class="flex items-center gap-2 px-1 pt-1">
+<input class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4 bg-background-light dark:bg-background-dark" id="remember" type="checkbox"/>
+<label class="text-sm text-gray-600 dark:text-gray-400 font-medium" for="remember">Remember this device</label>
 </div>
-<!-- Section 3: Contact & ID -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Phone Number</label>
-<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="+84 123 456 789" type="tel"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">ID Card (CCCD)</label>
-<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="12-digit number" type="text"/>
-</div>
-</div>
-<!-- Section 4: Address -->
-<div class="flex flex-col gap-2">
-<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Current Address</label>
-<textarea class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 p-4 text-base transition-all resize-none" placeholder="No. 123, Nguyen Hue Street, District 1, HCMC" rows="2"></textarea>
-</div>
-<!-- Agreement -->
-<div class="flex items-start gap-3 py-2">
-<input class="mt-1 w-5 h-5 rounded border-[#cfe7d7] dark:border-white/10 text-primary focus:ring-primary bg-white dark:bg-white/5" id="terms" type="checkbox"/>
-<label class="text-sm text-gray-600 dark:text-gray-400" for="terms">
-                            I agree to the <a class="text-primary font-semibold underline underline-offset-2" href="#">Terms of Service</a> and <a class="text-primary font-semibold underline underline-offset-2" href="#">Privacy Policy</a> regarding my health data.
-                        </label>
-</div>
-<!-- Action Button -->
+<!-- Login Button -->
 <div class="pt-4">
-<button class="w-full flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/90 text-[#0d1b12] h-14 text-lg font-bold transition-all shadow-lg shadow-primary/20" type="submit">
-<span class="material-symbols-outlined">person_add</span>
-<span>Create Account</span>
+<button class="w-full bg-primary hover:bg-primary/90 text-[#0d1b12] font-bold text-lg py-4 rounded-lg shadow-sm transition-all flex items-center justify-center gap-2" type="submit">
+                            Login
+                            <span class="material-symbols-outlined" data-icon="login">login</span>
 </button>
 </div>
 </form>
-<!-- Bottom Navigation -->
-<div class="mt-8 text-center">
-<p class="text-gray-600 dark:text-gray-400">
-                        Already have an account? 
-                        <a class="text-[#0d1b12] dark:text-white font-bold hover:text-primary dark:hover:text-primary transition-colors ml-1" href="#">Login here</a>
+<!-- Signup Prompt -->
+<div class="bg-[#f0f9f2] dark:bg-[#0d1d12] px-8 py-4 text-center border-t border-[#e7f3eb] dark:border-[#1e3a24]">
+<p class="text-sm text-gray-600 dark:text-gray-400">
+                        Don't have an account yet? 
+                        <a class="text-primary font-bold hover:underline" href="#">Create an account</a>
 </p>
-<div class="mt-6 flex justify-center items-center gap-2 text-xs text-gray-400">
-<span class="material-symbols-outlined text-sm">lock</span>
-<span>End-to-end encrypted medical platform</span>
 </div>
 </div>
+<!-- Footer Links (External to Card) -->
+<div class="mt-8 flex justify-center gap-6 text-sm text-gray-500 dark:text-gray-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
 </div>
 </div>
 </main>
-<!-- Simple Footer for Desktop -->
-<footer class="bg-white dark:bg-background-dark border-t border-[#e7f3eb] dark:border-white/5 px-10 py-4 hidden md:block">
-<div class="flex justify-between items-center text-xs text-gray-500 dark:text-gray-500">
-<p>© 2024 VaxSafe Systems. All rights reserved.</p>
-<div class="flex gap-6">
-<a class="hover:text-primary" href="#">Help Center</a>
-<a class="hover:text-primary" href="#">Contact Support</a>
-<a class="hover:text-primary" href="#">Language: English (US)</a>
-</div>
-</div>
-</footer>
+<!-- Bottom Decorative Image/Gradient -->
+<div class="fixed bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20"></div>
 </body></html>
