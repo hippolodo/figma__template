@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Registration - VaxSafe System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cfe7d7;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3eb] dark:border-b-white/10 px-10 py-3 bg-white dark:bg-background-dark z-10">
+<div class="flex items-center gap-4 text-[#0d1b12] dark:text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_535)">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</g>
+<defs>
+<clippath id="clip0_6_535"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-[#0d1b12] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">VaxSafe System</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Clinics</a>
+<a class="text-[#0d1b12] dark:text-gray-300 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Safety Information</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-[#0d1b12] text-sm font-bold leading-normal">
+<span>Register</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-[#e7f3eb] dark:bg-white/10 text-[#0d1b12] dark:text-white text-sm font-bold leading-normal">
+<span>Login</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Side: Illustration & Branding -->
+<div class="hidden lg:flex lg:w-1/2 flex-col justify-center items-center bg-white dark:bg-background-dark/50 border-r border-[#e7f3eb] dark:border-white/5 relative">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#13ec5b_1px,transparent_1px)] [background-size:20px_20px]"></div>
+<div class="max-w-md text-center p-8 z-10">
+<div class="w-full aspect-square bg-[#f0f9f3] dark:bg-[#1a2e21] rounded-full flex items-center justify-center mb-8 relative">
+<div class="w-64 h-64 bg-primary/20 rounded-full animate-pulse absolute"></div>
+<img alt="Healthcare professional with vaccine" class="relative z-10 w-4/5" data-alt="Illustration of a healthcare professional holding a vaccine vial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxqN0g4O8_TLHeTCkfNxQWVNbCm4LN82qS73S2fs0XShRIhqG79g5wMoDTvMXj3SeQHEURZlPSg6_mo_2yCeH5ob-2WyzEAyRVxUjrtQObvEnQ1_dz-uYyg0k4QCSCdcTH0cIfTp6nAYGEpUKIYdKoyYWhF5M8ZTbLg02OuLXPcEzgfwZwzmx2nJ3-HWalVjMscobPd_ktnv8qeaXfdKDh_Fi7-KWWWwT7HwTU6gzQn0KmRq6NI7zer4a_oI9eYyGGK3MJ8YJbuAH9"/>
+</div>
+<h2 class="text-3xl font-bold text-[#0d1b12] dark:text-white mb-4">Securing Health, One Dose at a Time</h2>
+<p class="text-gray-600 dark:text-gray-400">Join our comprehensive vaccination management system designed for your safety and convenience.</p>
+<div class="mt-10 flex gap-4 justify-center">
+<div class="flex items-center gap-2 px-3 py-1 bg-white dark:bg-background-dark border border-gray-200 dark:border-white/10 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-xs font-semibold dark:text-gray-300">Verified Clinics</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-white dark:bg-background-dark border border-gray-200 dark:border-white/10 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-sm">security</span>
+<span class="text-xs font-semibold dark:text-gray-300">Secure Records</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="flex-1 w-full lg:w-1/2 flex flex-col items-center justify-start overflow-y-auto custom-scrollbar bg-background-light dark:bg-background-dark py-12 px-6">
+<div class="w-full max-w-[540px]">
+<!-- Header Text -->
+<div class="mb-8">
+<h1 class="text-[#0d1b12] dark:text-white tracking-tight text-[32px] font-bold leading-tight pb-2">Create Your Account</h1>
+<p class="text-[#0d1b12]/70 dark:text-gray-400 text-base font-normal">
+                        Join thousands of citizens ensuring their health and safety through our vaccination program.
+                    </p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-5">
+<!-- Section 1: Credentials -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Username</label>
+<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="johndoe88" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Password</label>
+<div class="relative">
+<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 pr-10 text-base transition-all" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer select-none">visibility</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Personal Info -->
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Full Name (as per ID)</label>
+<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="Johnathan Doe" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Date of Birth</label>
+<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" type="date"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Gender</label>
+<select class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all appearance-none">
+<option disabled="" selected="" value="">Select Gender</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+</div>
+</div>
+<!-- Section 3: Contact & ID -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Phone Number</label>
+<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="+84 123 456 789" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">ID Card (CCCD)</label>
+<input class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 h-12 px-4 text-base transition-all" placeholder="12-digit number" type="text"/>
+</div>
+</div>
+<!-- Section 4: Address -->
+<div class="flex flex-col gap-2">
+<label class="text-[#0d1b12] dark:text-gray-200 text-sm font-semibold">Current Address</label>
+<textarea class="flex w-full rounded-lg text-[#0d1b12] dark:text-white focus:ring-2 focus:ring-primary/50 border border-[#cfe7d7] dark:border-white/10 bg-white dark:bg-white/5 p-4 text-base transition-all resize-none" placeholder="No. 123, Nguyen Hue Street, District 1, HCMC" rows="2"></textarea>
+</div>
+<!-- Agreement -->
+<div class="flex items-start gap-3 py-2">
+<input class="mt-1 w-5 h-5 rounded border-[#cfe7d7] dark:border-white/10 text-primary focus:ring-primary bg-white dark:bg-white/5" id="terms" type="checkbox"/>
+<label class="text-sm text-gray-600 dark:text-gray-400" for="terms">
+                            I agree to the <a class="text-primary font-semibold underline underline-offset-2" href="#">Terms of Service</a> and <a class="text-primary font-semibold underline underline-offset-2" href="#">Privacy Policy</a> regarding my health data.
+                        </label>
+</div>
+<!-- Action Button -->
+<div class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/90 text-[#0d1b12] h-14 text-lg font-bold transition-all shadow-lg shadow-primary/20" type="submit">
+<span class="material-symbols-outlined">person_add</span>
+<span>Create Account</span>
+</button>
+</div>
+</form>
+<!-- Bottom Navigation -->
+<div class="mt-8 text-center">
+<p class="text-gray-600 dark:text-gray-400">
+                        Already have an account? 
+                        <a class="text-[#0d1b12] dark:text-white font-bold hover:text-primary dark:hover:text-primary transition-colors ml-1" href="#">Login here</a>
+</p>
+<div class="mt-6 flex justify-center items-center gap-2 text-xs text-gray-400">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>End-to-end encrypted medical platform</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Simple Footer for Desktop -->
+<footer class="bg-white dark:bg-background-dark border-t border-[#e7f3eb] dark:border-white/5 px-10 py-4 hidden md:block">
+<div class="flex justify-between items-center text-xs text-gray-500 dark:text-gray-500">
+<p>© 2024 VaxSafe Systems. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Help Center</a>
+<a class="hover:text-primary" href="#">Contact Support</a>
+<a class="hover:text-primary" href="#">Language: English (US)</a>
+</div>
+</div>
+</footer>
+</body></html>
